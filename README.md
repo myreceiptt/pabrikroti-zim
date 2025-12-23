@@ -75,6 +75,10 @@ Examples:
 
 ---
 
+## Evergreen Notes
+
+- `@types/node` is pinned to **24.x** to match the Node 24 runtime (Vercel).
+
 ## Staging 2.4.47 by Zim Systems Limited
 
 Link #1: [researach.zim-tech.com](https://researach.zim-tech.com/) [![status](https://img.shields.io/badge/deploy-live-brightgreen)](https://researach.zim-tech.com/)  
