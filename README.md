@@ -73,6 +73,7 @@ Examples:
 - `@types/node` is pinned to **24.x** to match the Node 24 runtime (Vercel).
 - Yarn is **4.x**; use `yarn up -i` for update review and `yarn npm audit --severity moderate` for security checks.
 - CI runs on Node **24.x** with Corepack-enabled Yarn.
+- Live parity check (zim.endhonesa.com): **All green** — MINT CLOSED, no wallet prompts, no critical console errors.
 
 ## Staging 2.4.47 by Zim Systems Limited
 
