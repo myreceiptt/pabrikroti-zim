@@ -11,31 +11,30 @@
 ## Maintenance by Prof. NOTA Evergreen Standard
 
 This repo is a **Live Artefact App**: the user-facing UX is intentionally frozen
-(“MINT CLOSED”, no wallet prompts), while the codebase remains buildable and
+("MINT CLOSED", no wallet prompts), while the codebase remains buildable and
 production-safe on Vercel.
 
 ### Runtime
 
-- Node: **24.x** (local + Vercel, see `.nvmrc` and `package.json#engines`)
-- Package manager: **Yarn** (lockfile: `yarn.lock`, repo-pinned to `yarn@4.12.0`)
+- Node: **24.x** (local + Vercel)
+- Package manager: **Yarn** (lockfile: `yarn.lock`)
 - Deploy target: **Vercel**
 
 ### Build System
 
 - Next.js **16** App Router (Turbopack)
-- Yarn **4.x** via `packageManager` + `.yarn/releases`
 
 ### Monthly Safe Updates (recommended)
 
 Monthly is **monitor + verify**, not modernization.
 
-1. Check what's outdated (report only):
+1. Check what’s outdated (report only):
 
-   - `yarn up -i`
+   - `yarn outdated`
 
 2. Security report (report only unless explicitly approved):
 
-   - `yarn npm audit --severity moderate`
+   - `yarn audit --level moderate`
 
 3. Verify build reproducibility:
 
@@ -44,7 +43,7 @@ Monthly is **monitor + verify**, not modernization.
 
 4. Verify production sanity:
 
-   - Confirm “MINT CLOSED”
+   - Confirm "MINT CLOSED"
    - Confirm no wallet prompts / connect flows
    - Confirm no critical console errors
 
@@ -73,7 +72,7 @@ Examples:
 ## Evergreen Notes
 
 - `@types/node` is pinned to **24.x** to match the Node 24 runtime (Vercel).
-- Yarn is **4.x**; use `yarn up -i` for update review and `yarn npm audit --severity moderate` for security checks.
+- Yarn is **4.x**; use `yarn outdated` for update review and `yarn npm audit --severity moderate` for security checks.
 - CI runs on Node **24.x** with Corepack-enabled Yarn.
 - Live parity check (zim.endhonesa.com): **All green** — MINT CLOSED, no wallet prompts, no critical console errors.
 
