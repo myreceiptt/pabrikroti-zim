@@ -83,52 +83,6 @@ Manifestos are available in:
 
 ---
 
-## 📜 General Information
-
-**PABRIK ROTI: Programmed Bread Factory for Web3 Distribution**  
-_Developed and maintained by [Prof. NOTA Inc.](https://nota.endhonesa.com)_
-
----
-
-### 🏗️ What is PABRIKROTI?
-
-**PABRIKROTI** is a white label, multi-tenant, Web3-enabled application designed to create, display, and distribute tokenized digital assets—referred to as **Programmed Bread**. It supports NFTs (ERC-721/ERC-1155) and fungible tokens (ERC-20), integrating dynamic tenant configurations, visual claim interfaces, and cultural licensing through a fully modular and customizable framework.
-
-PABRIKROTI operates as a **decentralized digital production space**, where each domain/subdomain (e.g., `pabrikroti.endhonesa.com`) loads unique configurations for its respective brand, campaign, or cultural project, while still using the same underlying platform.
-
----
-
-### ✨ Key Features
-
-- **Dynamic Tenant-Based Theming**  
-  Auto-detects hostname, which is domain/subdomain and applies custom config from `/src/config/receipts/`.
-
-- **NFT Explorer & Claim Interface**  
-  Pages like `/free`, `/paid`, `/token/[idNFT]` list and handle claiming of tokenized assets with eligibility logic, fallback visuals, and blockchain status integration.
-
-- **ERC-20 Token Claim Pages**  
-  Pages like `/coins`, `/address/[coinAddress]` enable users to claim community or utility tokens with live metadata, eligibility checks, and claim buttons.
-
-- **Flexible Front Page (Multi-Mode)**  
-  Depending on the domain/subdomain, the home page renders:
-
-  - **Mode `abc`**: Login gateway with featured tokens
-  - **Mode `aiueo`**: Landing page for branding & storytelling
-
-- **Web3-Ready & Mobile Optimized**  
-  Built with:
-
-  - Next.js 15 + App Router
-  - React 19 + Server Components
-  - Tailwind CSS v4
-  - ThirdWeb SDK v5
-  - Prof. NOTA Inc. Protocol
-
-- **Ethical Licensing & Multilingual Manifestos**  
-  Supports 6+ languages for license agreements and project manifestos. Access is granted only with permission from [Prof. NOTA & Prof. NOTA Inc.](https://nota.endhonesa.com/) or certified facilitators.
-
----
-
 ## 🛠️ Getting Started
 
 ### Install dependencies
@@ -283,11 +237,11 @@ Examples:
 - Wallet connect must remain **disabled**
 - Any functional change requires a versioned successor (new tag/release)
 
----
+### Notes
 
-## Evergreen Notes
-
-- `@types/node` is pinned to **24.x** to match the Node 24 runtime (Vercel).
-- Yarn is **4.x**; use `yarn outdated` for update review and `yarn npm audit --severity moderate` for security checks.
-- CI runs on Node **24.x** with Corepack-enabled Yarn.
+- `@types/node` is pinned to **24.10.7** to match the Node 24 runtime (Vercel); 25.x intentionally deferred.
+- Use `yarn outdated` for update review and `yarn npm audit --severity moderate` for security checks.
+- CI runs on Node **24.x** with Corepack-enabled Yarn (**4.12.0**).
 - Live parity check (zim.endhonesa.com): **All green** — MINT CLOSED, no wallet prompts, no critical console errors.
+
+---
