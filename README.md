@@ -4,79 +4,6 @@
 >
 > — Prof. NOTA
 
----
-
----
-
-## Maintenance by Prof. NOTA Evergreen Standard
-
-This repo is a **Live Artefact App**: the user-facing UX is intentionally frozen
-("MINT CLOSED", no wallet prompts), while the codebase remains buildable and
-production-safe on Vercel.
-
-### Runtime
-
-- Node: **24.x** (local + Vercel)
-- Package manager: **Yarn 4.12.0** (lockfile: `yarn.lock`)
-- `@types/node`: **24.10.7** (pinned to match Node 24; 25.x intentionally deferred)
-- Deploy target: **Vercel**
-
-### Build System
-
-- Next.js **16.1.4** App Router (Turbopack)
-
-### Monthly Safe Updates (recommended)
-
-Monthly is **monitor + verify**, not modernization.
-
-1. Check what’s outdated (report only):
-
-   - `yarn outdated`
-
-2. Security report (report only unless explicitly approved):
-
-   - `yarn npm audit --severity moderate`
-
-3. Verify build reproducibility:
-
-   - `yarn lint`
-   - `yarn build`
-
-4. Verify production sanity:
-
-   - Confirm "MINT CLOSED"
-   - Confirm no wallet prompts / connect flows
-   - Confirm no critical console errors
-
-### Major Updates (quarterly / scheduled)
-
-Major upgrades must be done **one at a time**, with a dedicated PR and full testing.
-Artefact UX must remain unchanged.
-
-Examples:
-
-- Next.js / React major version upgrade
-- Web3 stack upgrade (e.g., thirdweb major)
-- Toolchain changes (Next.js or bundler shifts)
-- Node major policy change
-
-### Artefact UX Policy (Frozen)
-
-- Minting must remain **disabled**
-- Wallet connect must remain **disabled**
-- Any functional change requires a versioned successor (new tag/release)
-
----
-
----
-
-## Evergreen Notes
-
-- `@types/node` is pinned to **24.x** to match the Node 24 runtime (Vercel).
-- Yarn is **4.x**; use `yarn outdated` for update review and `yarn npm audit --severity moderate` for security checks.
-- CI runs on Node **24.x** with Corepack-enabled Yarn.
-- Live parity check (zim.endhonesa.com): **All green** — MINT CLOSED, no wallet prompts, no critical console errors.
-
 ## Staging 2.4.47 by Zim Systems Limited
 
 Link #1: [researach.zim-tech.com](https://researach.zim-tech.com/) [![status](https://img.shields.io/badge/deploy-live-brightgreen)](https://researach.zim-tech.com/)  
@@ -95,6 +22,34 @@ yarn install && yarn dev
 > — Prof. NOTA
 
 ---
+
+## About This Repo (Zim Systems Limited)
+
+This repo is a proof-of-concept web app built with **Zim Systems Limited** to demonstrate a simple and practical use of blockchain: **onchain-gated content**. We use the **Base** blockchain and the **thirdweb SDK** to provision **Smart Accounts** for users, then leverage onchain ownership and permissions to control access to research content.
+
+### Purpose
+
+- Prove that blockchain can be used as a secure access layer for digital documents and gated experiences.
+- Establish a prototype that can later integrate with Zim’s user database, so only registered users can access specific research materials.
+
+### What it does
+
+- Serves Web3 research documents behind access rules.
+- Uses Smart Accounts as the user identity primitive for gating, enabling a smoother onboarding path than raw EOAs.
+- Keeps the UX production-safe and deployable while the underlying Web3 policy remains the source of truth for access.
+
+### Technology
+
+- Next.js (App Router) + React + TypeScript
+- Tailwind CSS
+- thirdweb SDK (Smart Accounts + EVM wallet/contract integrations)
+- Base blockchain (EVM-compatible)
+- Vercel deployment
+
+### How we build (quality + workflow)
+
+- We ship in small, reviewable steps and keep the repo evergreen with controlled dependency updates.
+- We verify every update with audit/lint/build, and treat this repo as a stable artefact for global proof-of-work and collaboration.
 
 ## 📜 Licenses
 
@@ -267,3 +222,72 @@ If you have questions, feel free to open an issue or reach out via the Prof. NOT
 For feedback, questions, or cultural-technical collaboration, join Prof. NOTA discord at [https://discord.gg/5KrsT6MbFm](https://discord.gg/5KrsT6MbFm).
 
 ---
+
+---
+
+## Maintenance by Prof. NOTA Evergreen Standard
+
+This repo is a **Live Artefact App**: the user-facing UX is intentionally frozen
+("MINT CLOSED", no wallet prompts), while the codebase remains buildable and
+production-safe on Vercel.
+
+### Runtime
+
+- Node: **24.x** (local + Vercel)
+- Package manager: **Yarn 4.12.0** (lockfile: `yarn.lock`)
+- `@types/node`: **24.10.7** (pinned to match Node 24; 25.x intentionally deferred)
+- Deploy target: **Vercel**
+
+### Build System
+
+- Next.js **16.1.4** App Router (Turbopack)
+
+### Monthly Safe Updates (recommended)
+
+Monthly is **monitor + verify**, not modernization.
+
+1. Check what’s outdated (report only):
+
+   - `yarn outdated`
+
+2. Security report (report only unless explicitly approved):
+
+   - `yarn npm audit --severity moderate`
+
+3. Verify build reproducibility:
+
+   - `yarn lint`
+   - `yarn build`
+
+4. Verify production sanity:
+
+   - Confirm "MINT CLOSED"
+   - Confirm no wallet prompts / connect flows
+   - Confirm no critical console errors
+
+### Major Updates (quarterly / scheduled)
+
+Major upgrades must be done **one at a time**, with a dedicated PR and full testing.
+Artefact UX must remain unchanged.
+
+Examples:
+
+- Next.js / React major version upgrade
+- Web3 stack upgrade (e.g., thirdweb major)
+- Toolchain changes (Next.js or bundler shifts)
+- Node major policy change
+
+### Artefact UX Policy (Frozen)
+
+- Minting must remain **disabled**
+- Wallet connect must remain **disabled**
+- Any functional change requires a versioned successor (new tag/release)
+
+---
+
+## Evergreen Notes
+
+- `@types/node` is pinned to **24.x** to match the Node 24 runtime (Vercel).
+- Yarn is **4.x**; use `yarn outdated` for update review and `yarn npm audit --severity moderate` for security checks.
+- CI runs on Node **24.x** with Corepack-enabled Yarn.
+- Live parity check (zim.endhonesa.com): **All green** — MINT CLOSED, no wallet prompts, no critical console errors.
